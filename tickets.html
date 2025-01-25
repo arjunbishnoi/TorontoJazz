@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Tickets - Toronto Jazz Extravaganza</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Defer JavaScript to load after the page -->
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- Header section with navigation menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="tickets.html">Buy Tickets</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Main content area -->
+    <main>
+
+        <!-- Ticket purchase form section -->
+        <section id="ticket-purchase">
+            <h1>Purchase Tickets</h1>
+            
+            <!-- Form for ticket selection and payment -->
+            <form id="ticket-form">
+
+                <!-- Ticket type dropdown -->
+                <div class="form-row">
+                    <label for="ticket-type">Select Ticket Type:</label>
+                    <select id="ticket-type" name="ticket-type">
+                        <option value="general" selected>General Admission - $100</option>
+                        <option value="vip">VIP Admission - $250</option>
+                    </select>
+                </div>
+
+                <!-- Quantity input -->
+                <div class="form-row">
+                    <label for="ticket-quantity">Enter Quantity:</label>
+                    <input type="number" id="ticket-quantity" name="ticket-quantity" min="1" value="1" required>
+                </div>
+
+                <!-- Credit card input -->
+                <div class="form-row">
+                    <label for="credit-card">Enter Credit Card Number (6 digits):</label>
+                    <input type="text" id="credit-card" name="credit-card" maxlength="6" pattern="\d{6}" 
+                           title="6-digit number" placeholder="123456" required>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" id="pay-now">Pay Now</button>
+            </form>
+        </section>
+
+        <!-- Order summary section (hidden by default) -->
+        <section id="order-summary" style="display: none;">
+            <h2>Order Summary</h2>
+            <p><strong>Number of Tickets:</strong> <span id="summary-quantity"></span></p>
+            <p><strong>Price per Ticket:</strong> $<span id="summary-price"></span></p>
+            <p><strong>Subtotal:</strong> $<span id="summary-subtotal"></span></p>
+            <p><strong>Tax (13%):</strong> $<span id="summary-tax"></span></p>
+            <p><strong>Total Price:</strong> $<span id="summary-total"></span></p>
+        </section>
+    </main>
+
+    <!-- Footer section with copyright and social media icons -->
+    <footer>
+        <p>&copy; 2024 Toronto Jazz Extravaganza. All rights reserved.</p>
+        <div id="social-media">
+            <a href="#"><img src="images/facebook-icon.png" alt="Facebook Icon"></a>
+            <a href="#"><img src="images/instagram-icon.png" alt="Instagram Icon"></a>
+            <a href="#"><img src="images/twitter-icon.png" alt="Twitter Icon"></a>
+        </div>
+    </footer>
+    
+</body>
+</html>

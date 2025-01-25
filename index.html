@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toronto Jazz Extravaganza</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+
+    <!-- Header section with navigation menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="tickets.html">Buy Tickets</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!-- Main content area -->
+    <main>
+
+        <!-- Featured festival logo -->
+        <div id="featured-img">
+            <img id="featured-image" src="images/jazz-banner.png" alt="Toronto Jazz Extravaganza Banner">
+        </div>
+
+        <!-- Subheading describing the festival -->
+        <div id="subhead">
+            <p>Experience the rhythms of world-class jazz at Canada's premier music festival.</p>
+        </div>
+        
+
+        <!-- Festival date and location section -->
+        <section id="festival-details">
+            <p id="date"><strong>Date:</strong> March 21–24, 2025</p>
+            <p id="location"><strong>Location:</strong> Toronto, Canada</p>
+        </section>
+
+
+        <!-- Ticket pricing options section -->
+        <section id="tickets">
+            <h2>Tickets and Pricing</h2>
+            <div class="ticket-option">
+                <h3>General Admission</h3>
+                <p>Price: $100</p>
+                <p>Includes access to all performances and open seating.</p>
+                <a href="tickets.html" class="button">Buy Tickets</a>
+            </div>
+            <div class="ticket-option">
+                <h3>VIP Admission</h3>
+                <p>Price: $250</p>
+                <p>Includes premium seating, backstage access, and complimentary refreshments.</p>
+                <a href="tickets.html" class="button">Buy Tickets</a>
+            </div>
+        </section>
+
+
+        <!-- Performers section (dynamically populated via JavaScript) -->
+        <section id="performers">
+            <h2>Featured Performers</h2>
+            <!-- JavaScript will populate performer cards here -->
+        </section>
+    </main>
+
+
+
+    <!-- Footer section with copyright and social media icons -->
+    <footer>
+        <p>&copy; 2024 Toronto Jazz Extravaganza. All rights reserved.</p>
+        <div id="social-media">
+            <a href="#"><img src="images/facebook-icon.png" alt="Facebook Icon"></a>
+            <a href="#"><img src="images/instagram-icon.png" alt="Instagram Icon"></a>
+            <a href="#"><img src="images/twitter-icon.png" alt="Twitter Icon"></a>
+        </div>
+    </footer>
+
+
+
+    <!-- JavaScript to dynamically load performers -->
+    <script>
+        // Wait for the DOM to load before executing
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Array of performer objects
+            const performers = [
+                {
+                    name: "John Doe",
+                    genre: "Smooth Jazz",
+                    time: "August 21, 7:00 PM - 8:30 PM",
+                    image: "images/saxophonist.jpg",
+                    alt: "John Doe playing saxophone"
+                },
+                {
+                    name: "Toronto Jazz Trio",
+                    genre: "Classic Jazz",
+                    time: "August 22, 6:00 PM - 7:30 PM",
+                    image: "images/jazz-band.jpg",
+                    alt: "Toronto Jazz Trio performing"
+                },
+                {
+                    name: "Jane Smith",
+                    genre: "Vocal Jazz",
+                    time: "August 23, 8:00 PM - 9:30 PM",
+                    image: "images/vocalist.jpg",
+                    alt: "Jane Smith singing"
+                }
+            ];
+
+            // Get the performers section element
+            const performersSection = document.getElementById('performers');
+
+
+            // Loop through performers and generate HTML
+            performers.forEach(performer => {
+                const performerHTML = `
+                    <div class="performer">
+                        <div class="img-container">
+                            <img src="${performer.image}" alt="${performer.alt}">
+                        </div>
+                        <h3>${performer.name}</h3>
+                        <p>Genre: ${performer.genre}</p>
+                        <p>Time: ${performer.time}</p>
+                    </div>
+                `;
+                performersSection.innerHTML += performerHTML;
+            });
+        });
+    </script>
+
+    
+</body>
+</html>
